@@ -1,36 +1,25 @@
-
 const typingTexts = [
-    "Life doesn’t always give us perfect moments, but the imperfect ones often teach us more than we expect.",
-    "Growing up means learning to let go, to heal slowly, and to trust the process even when it feels uncertain.",
-    "Technology keeps evolving, making the world faster, smarter and more connected than ever before.",
-    "Some friendships feel like home, warm and familiar, even after years of silence and distance.",
-    "Every great story begins with a small decision to try, even when the outcome is still unknown.",
-    "Music has a strange way of bringing back memories we thought we forgot long ago.",
-    "Happiness is not a destination, but small moments of joy collected throughout life.",
-    "Sometimes we need to pause, breathe, and remind ourselves that progress is progress, no matter how slow.",
-    "Courage is continuing to move forward even when the path is dark and unfamiliar.",
-    "Dreams remain dreams until effort turns them into reality through patience and action.",
-    "A cup of coffee, an open window and soft rain can bring peace on the toughest days.",
-    "Every failure is a lesson dressed in disappointment, waiting to make us stronger.",
-    "Books hold entire worlds inside them, waiting for curious minds to open and explore.",
-    "Even a small act of kindness can change someone's entire day without us realizing it.",
-    "Time moves fast, but memories slow it down when we look back and smile.",
-    "Some people enter our lives like chapters, teaching us something before they exit the story.",
-    "Travel broadens the soul, showing us cultures, colors and perspectives beyond our own.",
-    "Sunsets remind us that endings can be beautiful too, soft and gentle like a final warm note.",
-    "Success isn't loud—it’s silent nights of work, effort, revision and belief.",
-    "Sometimes strength is not fighting harder, but knowing when to rest and try again tomorrow.",
-    "Movies let us escape reality for a while, living a thousand lives in two hours.",
-    "Motivation gets you started, discipline keeps you going when motivation fades away.",
-    "Not every day will be good, but every day holds something good if you look closely.",
-    "Even the tallest tree was once a small seed buried in darkness before it grew.",
-    "When we look up at the stars, our problems feel a little smaller than before.",
-    "Confidence grows when your mind stops fearing judgment and starts believing in effort.",
-    "Rainy days slow the world down, giving us time to think, dream and reset our minds.",
-    "Learning is a never-ending journey, and every skill begins with a single uncertain step.",
-    "Sometimes silence says more than words, especially when shared with the right person.",
-    "Life is not a race, it's a long walk — enjoy the view while you move forward."
+    "Sometimes life moves too fast, and we forget to slow down and breathe. But in quiet moments, with a cup of coffee and soft rain outside, we remember that peace doesn't always come from grand achievements, but from small pauses that allow us to feel alive again.",
+    
+    "We grow through the seasons of our life, just like trees that lose their leaves only to bloom again. Strength is not about never falling, but about standing up with hope even when yesterday felt heavy on our shoulders.",
+    
+    "Technology has changed the way we connect, learn, and dream. A single idea written in code can turn into something that helps millions, reminding us that creativity and persistence can shape the future one line at a time.",
+    
+    "Some days feel like tangled thoughts and unfinished plans, but it's okay to move slowly. Progress doesn’t need to be loud or perfect. Even one small step can mark the beginning of a completely new chapter in our story.",
+    
+    "Travel teaches us more than textbooks ever could, showing us mountains that kiss the sky, oceans that hold mysteries, and people with stories woven from different cultures, yet similar dreams beating inside their hearts.",
+    
+    "Friendship isn't measured by constant presence, but by the comfort of knowing that someone will return no matter how long the silence lasts. Real friends pick up conversations like pages of a book bookmarked by love.",
+    
+    "We chase dreams not because they are easy, but because something inside us refuses to settle. Every late night, every failed attempt, every retry shapes us into someone stronger and more prepared than we were before.",
+    
+    "The universe moves in strange and beautiful ways. Sometimes things fall apart so better things can fall together. Sometimes we lose what we wanted to find what we truly needed. Time has a gentle way of revealing why.",
+    
+    "Books hold entire worlds inside simple pages. With a single sentence, we can travel to magical lands, feel heartbreak, witness wars, or fall in love with characters who never existed, yet live forever in our minds.",
+    
+    "Look at the stars and remember how tiny we are, yet how incredibly powerful our thoughts can be. Every invention, every work of art, every story began as a small spark inside someone's mind — maybe your next spark changes the world."
 ];
+
 
 
 const textdisplay=document.getElementById("textdisplay");
@@ -41,16 +30,13 @@ const accuracyEl=document.getElementById("accuracy");
 const startbtn=document.getElementById("startbtn");
 const restartBtn=document.getElementById("restartBtn"); // FIXED ✔
 
-// VARIABLES
+
 let timeleft=60;
 let timer=null;
 let isRunning=false;
 let originaltext="";
 let typedwords=0;
 
-
-
-// RESET FUNCTION
 function resetTEST(){
     timeleft=60;
     timeEl.innerText=timeleft;
@@ -62,7 +48,7 @@ function resetTEST(){
     isRunning=false;
 }
 
-// START BUTTON
+
 startbtn.addEventListener("click",()=>{
     if(isRunning) return;
 
@@ -77,12 +63,12 @@ startbtn.addEventListener("click",()=>{
 
     timer=setInterval(()=>{
         timeleft--;
-        timeEl.innerText=timeleft;      // FIXED ✔
+        timeEl.innerText=timeleft;      
         if(timeleft===0) finishTest();
     },1000);
 });
 
-// FINISH FUNCTION
+
 function finishTest(){
     clearInterval(timer);
     inputfield.disabled=true;
@@ -101,12 +87,13 @@ function finishTest(){
 
     accuracyEl.innerText=Math.floor((correct/originalWords.length)*100)+"%";
 
-    restartBtn.style.display="block";  // FIXED ✔
+    restartBtn.style.display="block";  
 }
 
-// RESTART BUTTON
+
 restartBtn.addEventListener("click",()=>{
     resetTEST();
     restartBtn.style.display="none";
     textdisplay.innerText="Click Start to type!";
 });
+
