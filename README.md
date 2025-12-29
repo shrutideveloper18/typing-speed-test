@@ -3,7 +3,7 @@
 A clean and aesthetic **Typing Speed Test Web App** built using **HTML, CSS & JavaScript**.  
 It measures **Typing Speed (WPM)**, **Accuracy**, and provides a **60-second timed practice** with random meaningful sentences.
 
-# Live Preview :
+# Live Preview : https://shrutideveloper18.github.io/typing-speed-test/
 
 ---
 
